@@ -1,5 +1,14 @@
 shelf={}
 
+class Book(object):
+    def __init__(self,Title,Author):
+        self.Title=Title
+        self.Author=Author
+        shelf[self.Title]=self.Author
+
+    def __repr__(self):
+        #return self.Title + self.Author
+        return shelf
 
 def showmenue():
     print "1 - Enter book"
@@ -13,18 +22,20 @@ def showmenue():
 def enterbook():
     Title = raw_input("Enter book Title")
     Author = raw_input("Enter author")
-    shelf[Title] = Author
+    book = Book(Title,Author)
     showmenue()
 
 
 
 def findbook():
     Title = raw_input("Enter book Title")
-    author = shelf[Title]
-    print author
+    print shelf[Title]
+    showmenue()
+
 
 
 
 showmenue()
+
 
 
